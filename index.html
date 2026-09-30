@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>埃菲尔铁塔 · 三维结构模型</title>
+    <style>
+      html, body { margin: 0; height: 100%; overflow: hidden; background: #05060a; font-family: "Microsoft YaHei", "PingFang SC", system-ui, sans-serif; }
+      canvas { display: block; }
+      .labels { position: fixed; inset: 0; pointer-events: none; }
+      .label { color: #fff; font-size: 12px; padding: 3px 8px; border-radius: 4px; background: rgba(20, 16, 10, 0.72); border: 1px solid rgba(230, 190, 110, 0.6); white-space: nowrap; }
+      #hud { position: fixed; left: 16px; top: 16px; color: #f3ead8; pointer-events: none; text-shadow: 0 1px 3px rgba(0,0,0,.8); max-width: calc(100vw - 32px); }
+      #hud h1 { margin: 0; font-size: 20px; letter-spacing: 1px; font-weight: 600; }
+      #hud .sub { font-size: 12px; opacity: .8; margin-top: 2px; }
+      #clock { font-size: 30px; font-variant-numeric: tabular-nums; margin-top: 10px; font-weight: 300; }
+      #status { font-size: 12px; opacity: .9; }
+      #stats { margin-top: 10px; font-size: 11px; line-height: 1.6; opacity: .75; background: rgba(0,0,0,.28); padding: 6px 10px; border-radius: 6px; display: inline-block; }
+      #stats b { font-weight: 600; color: #ffd48a; }
+      #help { position: fixed; left: 16px; bottom: 14px; color: #ddd; font-size: 11px; opacity: .6; pointer-events: none; }
+    </style>
+  </head>
+  <body>
+    <div id="hud">
+      <h1>埃菲尔铁塔 La Tour Eiffel</h1>
+      <div class="sub">1:1 程序化钢结构模型 · 高 330 m · 底座 124.9 m</div>
+      <div id="clock">21:00:00</div>
+      <div id="status"></div>
+      <div id="stats">
+        构件实例 <b id="stat-bars">-</b> · 三角面 <b id="stat-tris">-</b><br />
+        节间（地面-一层 / 一层-二层 / 塔身）<b id="stat-panels">-</b><br />
+        生成耗时 <b id="stat-build">-</b> · FPS <b id="stat-fps">-</b>
+      </div>
+    </div>
+    <div id="help">左键旋转 · 右键平移 · 滚轮缩放 · 右上角面板切换时间 / 灯光 / 视角</div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
